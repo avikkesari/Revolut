@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: revolutMoneyTransfer.dao.TransactionDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.486 s <<< FAILURE! - in revolutMoneyTransfer.dao.TransactionDaoTest
+executeTransaction(revolutMoneyTransfer.dao.TransactionDaoTest)  Time elapsed: 0.007 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class revolutMoneyTransfer.db.HibernateSessionUtil.
+
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 1.8
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 25.121-b13
+JVM name           : Java HotSpot(TM) 64-Bit Server VM
+JVM version        : 1.8.0_121-b13
+JVM info           : mixed mode
+OS name            : Mac OS X
+OS version         : 10.14.3
+
+
+You are seeing this disclaimer because Mockito is configured to create inlined mocks.
+You can learn about inline mocks and their limitations under item #39 of the Mockito class javadoc.
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+	at revolutMoneyTransfer.dao.TransactionDaoTest.<init>(TransactionDaoTest.java:32)
+Caused by: java.lang.IllegalArgumentException: Could not create type
+	at revolutMoneyTransfer.dao.TransactionDaoTest.<init>(TransactionDaoTest.java:32)
+Caused by: java.lang.InternalError: class redefinition failed: invalid class
+	at revolutMoneyTransfer.dao.TransactionDaoTest.<init>(TransactionDaoTest.java:32)
+
