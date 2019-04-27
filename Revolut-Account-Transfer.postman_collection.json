@@ -1,0 +1,467 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Revolut-Account-Transfer",
+		"_postman_id": "d059fe05-a94e-6d44-e230-dd1d7b8c9f7f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Account",
+			"request": {
+				"url": "http://localhost:8080/accounts/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ownerName\": \"Doe\",\n    \"nickName\" : \"\",\n    \"balance\": 100,\n    \"currency\": \"USD\"\n}"
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "31bfaea4-49f8-41f1-8faf-c99fbffa4003",
+					"name": "Create Account",
+					"originalRequest": {
+						"url": "http://localhost:8080/accounts/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "",
+								"warning": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ownerName\": \"Doe\",\n    \"nickName\" : \"\",\n    \"balance\": 100,\n    \"currency\": \"USD\"\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "93",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sat, 27 Apr 2019 12:27:48 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 44,
+					"body": "{\"id\":2,\"ownerName\":\"Doe\",\"nickName\":\"\",\"balance\":100.0,\"blockedAmount\":0.0,\"currency\":\"USD\"}"
+				}
+			]
+		},
+		{
+			"name": "Get All Accounts",
+			"request": {
+				"url": "http://localhost:8080/accounts",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "525ff83b-c3e8-4ad6-bce1-5d794db9aa70",
+					"name": "Get All Accounts",
+					"originalRequest": {
+						"url": "http://localhost:8080/accounts",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "190",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sat, 27 Apr 2019 12:27:51 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 286,
+					"body": "[{\"id\":1,\"ownerName\":\"John\",\"nickName\":\"\",\"balance\":100.0,\"blockedAmount\":0.0,\"currency\":\"USD\"},{\"id\":2,\"ownerName\":\"Doe\",\"nickName\":\"\",\"balance\":100.0,\"blockedAmount\":0.0,\"currency\":\"USD\"}]"
+				}
+			]
+		},
+		{
+			"name": "Get specific account",
+			"request": {
+				"url": "http://localhost:8080/accounts/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "715b2829-2829-43fb-8507-3b6d3b0181af",
+					"name": "Get specific account",
+					"originalRequest": {
+						"url": "http://localhost:8080/accounts/2",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "93",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sat, 27 Apr 2019 12:27:54 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 47,
+					"body": "{\"id\":2,\"ownerName\":\"Doe\",\"nickName\":\"\",\"balance\":100.0,\"blockedAmount\":0.0,\"currency\":\"USD\"}"
+				}
+			]
+		},
+		{
+			"name": "Update Account",
+			"request": {
+				"url": "http://localhost:8080/accounts/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"nickName\":\"johny\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "4b6a9cea-2275-4182-afda-104806b31822",
+					"name": "Update Account",
+					"originalRequest": {
+						"url": "http://localhost:8080/accounts/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"nickName\":\"johny\"\n\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "99",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sat, 27 Apr 2019 12:27:59 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 59,
+					"body": "{\"id\":1,\"ownerName\":\"John\",\"nickName\":\"johny\",\"balance\":100.0,\"blockedAmount\":0.0,\"currency\":\"USD\"}"
+				}
+			]
+		},
+		{
+			"name": "Delete Account",
+			"request": {
+				"url": "http://localhost:8080/accounts/3",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "febfaa19-2294-48b9-b0d0-801b1b5c653a",
+					"name": "Delete Account",
+					"originalRequest": {
+						"url": "http://localhost:8080/accounts/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plainText",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "0",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Thu, 25 Apr 2019 20:17:14 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 49,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Create Transaction",
+			"request": {
+				"url": "http://localhost:8080/transactions",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromBankAccountId\": 2,\n    \"toBankAccountId\": 1,\n    \"amountToBeTransferred\": 80,\n    \"currency\": \"USD\"\n}"
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "6ec393d4-b7f7-40fc-b84a-639c26f54cb8",
+					"name": "Create Transaction",
+					"originalRequest": {
+						"url": "http://localhost:8080/transactions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fromBankAccountId\": 2,\n    \"toBankAccountId\": 1,\n    \"amountToBeTransferred\": 80,\n    \"currency\": \"USD\"\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "208",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sat, 27 Apr 2019 12:22:53 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 108,
+					"body": "{\"id\":3,\"fromBankAccountId\":2,\"toBankAccountId\":1,\"amountToBeTransferred\":80.0,\"currency\":\"USD\",\"creationDate\":1556367773024,\"updateDate\":null,\"status\":\"PROCESSING\",\"message\":\"Transaction has been initiated\"}"
+				}
+			]
+		},
+		{
+			"name": "Get All Transactions",
+			"request": {
+				"url": "http://localhost:8080/transactions",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "db0137f0-e667-4377-9d83-d9079208d053",
+					"name": "Get All Transactions",
+					"originalRequest": {
+						"url": "http://localhost:8080/transactions",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "208",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sat, 27 Apr 2019 12:23:00 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 24,
+					"body": "[{\"id\":3,\"fromBankAccountId\":2,\"toBankAccountId\":1,\"amountToBeTransferred\":80.0,\"currency\":\"USD\",\"creationDate\":1556367773024,\"updateDate\":1556367777740,\"status\":\"SUCCESS\",\"message\":\"Transaction Successful\"}]"
+				}
+			]
+		},
+		{
+			"name": "Get specific Transaction",
+			"request": {
+				"url": "http://localhost:8080/transactions/3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "c06143c2-2bbc-467b-9f9d-e7a0ad6e291d",
+					"name": "Get specific Transaction",
+					"originalRequest": {
+						"url": "http://localhost:8080/transactions/3",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "206",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sat, 27 Apr 2019 12:08:58 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 25,
+					"body": "{\"id\":3,\"fromBankAccountId\":2,\"toBankAccountId\":1,\"amountToBeTransferred\":80.0,\"currency\":\"USD\",\"creationDate\":1556366927457,\"updateDate\":1556366932448,\"status\":\"SUCCESS\",\"message\":\"Transaction Successful\"}"
+				}
+			]
+		}
+	]
+}
