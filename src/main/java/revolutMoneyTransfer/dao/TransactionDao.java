@@ -109,7 +109,9 @@ public class TransactionDao {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			//e.printStackTrace();
+			lockMap.get(transaction.getFromBankAccountId()).unlock();
+			lockMap.get(transaction.getToBankAccountId()).unlock();
 			if(tx!=null) tx.rollback();
 			throw new CustomApplicationException(e,"CANNOT SAVE OBJECT");
 		}
